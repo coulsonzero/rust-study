@@ -1,54 +1,52 @@
 //! for loop:
 //!
 //! ```
-//! (1) string:
+//! (1) str || string:
 //!         a) for c in s.chars() {...}
 //!         b) for (_, c) in s.chars().enumerate() {...}
-//! (2) array:
-//!         for v in nums {...}
+//! (2) array || vector:
+//!         for i in 0..nums.len() {}
+//!         for v in nums {}
+//!         for v in nums.iter() {}
+//!         for v in &mut nums {}
+//!         for v in nums.iter_mut() {}
+//! (3) hashmap:
+//!         for (k, v) in &map {}
 //! ```
 
 
 
-pub fn run() {
-    string_iter();
-    string_enum();
-    array_iter();
-}
 
-fn string_iter() {
-    let s = String::from("hello");
-    for c in s.chars() {
-        print!("{}", c);
-    }
-    println!();
-}
 
-fn string_enum() {
-    let s = "hello world";
+
+
+
+
+// &str || String
+pub fn for_str(s: &str) {
+    print!("|\x1b[96m{:?}\x1b[0m| => {{ ", s);
     for (_, c) in s.chars().enumerate() {
-        print!("{}", c);
+        print!("{:?} ", c);
     }
-    println!();
+    println!("}}");
 }
 
 
-fn array_iter() {
-    let nums: [i32; 5] = [10, 20, 30, 40, 50];
-
+// array || vector
+pub fn for_array(nums: &mut [i32]) {
+    print!("|\x1b[96m{:?}\x1b[0m| => ", nums);
     print!("[ ");
-    for v in nums {
-        print!("{} ", v);
+    for i in 0..nums.len() {
+        print!("{}", nums[i]);
+        if i != nums.len()-1 {
+            print!(", ");
+        }
     }
-    println!("]");
+    println!(" ]");
 }
 
-fn vector_iter() {
-    let nums: Vec<i32> = vec![1, 2, 3, 4, 5];
-
-    print!("[ ");
-    for v in nums.iter() {
-        print!("{} ", v);
-    }
-    println!("]");
-}
+// use std::collections::hash_map::RandomState;
+// use std::collections::HashMap;
+// pub fn for_hashmap(map: HashMap<K, V, RandomState>) {
+//
+// }

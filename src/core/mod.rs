@@ -4,3 +4,4 @@ pub mod slice;
 pub mod vector;
 pub mod hashmap;
 pub mod str;
+pub mod test_array;

@@ -1,7 +1,37 @@
-pub fn run() {
-    let num1 = [1, 2, 3, 4, 5];
-    let nums2: [i32; 5] = [1, 2, 3, 4, 5];
-}
+//! # Array
+//!
+//! ```rust
+//! // method-1 (good: get or set)
+//! for i in 0..nums.len() {
+//!     // get: print!("{} ", nums[i]);
+//!     // set: nums[i] += 1;
+//! }
+//!
+//! // method-2 (only get)
+//! for v in nums {
+//!     print!("{} ", v);
+//! }
+//!
+//! // method-3 (only get)
+//! for v in nums.iter() {
+//!     print!("{} ", v);
+//! }
+//!
+//! // change elements of array or vector
+//! // method-4 (can set)
+//! for v in &mut nums {
+//!     *v += 2;
+//! }
+//!
+//! // method-5 (can set)
+//! for v in nums.iter_mut() {
+//!     *v += 2;
+//! }
+//! ```
+//!
+//!
+
+
 
 
 fn example() {

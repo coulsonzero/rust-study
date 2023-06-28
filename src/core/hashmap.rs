@@ -20,3 +20,18 @@ pub fn run() {
     // output: {"Blue": 10, "Yellow": 50}
 }
 
+
+fn example() {
+    use std::collections::HashMap;
+
+    let map = HashMap::from([
+        ("a", 1),
+        ("b", 2),
+        ("c", 3),
+    ]);
+
+    // map.values_mut(), map.keys()
+    for val in map.values() {
+        println!("{}", val);
+    }
+}

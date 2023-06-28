@@ -30,8 +30,7 @@ struct Rectangle {
 
 impl Rectangle {
     fn new(w: u32, h: u32) -> Rectangle {
-        let rect = Rectangle {  width: w,  height: h };
-        return rect;
+        return Rectangle {  width: w,  height: h };
     }
 
     fn area(&self) -> u32 {

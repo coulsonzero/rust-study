@@ -5,10 +5,13 @@
 #![allow(unused_doc_comments)]  // warning: unused doc comment
 #![allow(unused_mut)]           // warning: variable does not need to be mutable
 #![allow(deprecated)]           // warning: use of deprecated function
+#![allow(unused)]
+
 
 //! simplify the usage of module
 use add::add_one::plus;
 use crate::basic::output;
+use crate::basic::input;
 use crate::basic::datatype;
 use crate::basic::vars;
 use crate::control::while_loop;
@@ -16,18 +19,14 @@ use crate::core::string;
 use crate::core::tuple;
 use crate::core::vector;
 use crate::core::hashmap;
-use crate::template::template_func as tf;
-use crate::template::template_struct as ts;
-use crate::template::template_impl as ti;
-use crate::template::template_impl_2 as ti2;
-use crate::structs::struct_impl_for as sif;
-
+use crate::structs::struct_trait_for as sif;
+use crate::structs::struct_trait::AnyExt;
 
 
 /// manage modules
 mod add;
 mod basic;
-pub mod control;
+mod control;
 mod core;
 mod template;
 mod functions;
@@ -41,12 +40,13 @@ mod depends;
 
 /// note: `#[warn(dead_code)]` on by default
 fn main() {
-
     /* module usage example */
     // println!("{}", plus(1));
 
     /* basic */
     // output::run();
+    // input::example_str();
+    // input::example_num();
     // datatype::run();
     // vars::run();
     // basic::vars_more::run();
@@ -73,16 +73,16 @@ fn main() {
     // structs
     // structs::struct_func::run();
     // structs::struct_impl::run();
-    structs::struct_impl_for::run();
+    // structs::struct_impl_for::run();
     // sif::run();
+    // structs::struct_trait::run();
+    // println!("{}", structs::struct_trait::AnyExt::type_name(&12));  // i32
+    // println!("{}", AnyExt::type_name(&12));  // i32
 
 
 
     /* template */
-    // tf::run();
-    // ts::run();
-    // ti::run();
-    // ti2::run();
+
 
 
     /* macros */

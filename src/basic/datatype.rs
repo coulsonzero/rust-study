@@ -16,6 +16,8 @@ not allow you to assign a value of the wrong type.
 
 
 
+use crate::structs::struct_trait::AnyExt;
+
 pub fn run() {
     // Default is "i32"
     let x = 1;
@@ -55,4 +57,30 @@ pub fn run() {
     let tup: (i32, f64, u8) = (500, 6.4, 1);
 
     println!("{:?}", (x, y, z, is_active, is_greater, a1, face, nums));
+}
+
+
+#[test]
+fn test_datetype_case() {
+    let num: f64 = 12.7;
+    // println!("{}", num as i32);         // 12
+    assert_eq!(num as i32, 12);
+}
+
+#[test]
+fn test_typename() {
+    let num: f64 = 12.7;
+    // println!("{}", num.type_name());    // f64
+    // println!("{}", type_name2(num));    // f64
+    assert_eq!(num.type_name(), "f64");
+    assert_eq!(type_name2(num), "f64");
+}
+
+fn type_name<T>() -> &'static str {
+    return std::any::type_name::<T>()
+}
+
+
+fn type_name2<T>(_: T) -> &'static str {
+    return std::any::type_name::<T>()
 }
