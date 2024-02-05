@@ -19,8 +19,6 @@ use crate::core::string;
 use crate::core::tuple;
 use crate::core::vector;
 use crate::core::hashmap;
-use crate::structs::struct_trait_for as sif;
-use crate::structs::struct_trait::AnyExt;
 
 
 /// manage modules
@@ -30,7 +28,6 @@ mod control;
 mod core;
 mod template;
 mod functions;
-mod structs;
 mod macros;
 mod depends;
 
@@ -75,9 +72,7 @@ fn main() {
     // structs::struct_impl::run();
     // structs::struct_impl_for::run();
     // sif::run();
-    // structs::struct_trait::run();
-    // println!("{}", structs::struct_trait::AnyExt::type_name(&12));  // i32
-    // println!("{}", AnyExt::type_name(&12));  // i32
+
 
 
 

@@ -3,7 +3,7 @@
 //! ## example-1
 //!
 //! ```rust
-//! use crate::structs::struct_trait::AnyExt;
+//! use crate::core::structs::struct_trait::AnyExt;
 //! mod structs;
 //!
 //! fn main() {
